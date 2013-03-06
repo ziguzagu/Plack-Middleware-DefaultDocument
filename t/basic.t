@@ -27,7 +27,6 @@ test_psgi $app, sub {
 
     $res = $cb->(GET 'http://localhost/default.txt');
     is $res->code, 200;
-    is $res->content, "default!!\n";
     is md5_hex($res->content), '256f98c0960a2aa6bad72dfb6e1f98bf';
     is $res->headers->header('Content-Type'), 'text/plain';
     
