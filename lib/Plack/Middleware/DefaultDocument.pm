@@ -26,7 +26,7 @@ sub call {
 
                 my $h = Plack::Util::headers($r->[1]);
                 $h->remove('Content-Length');
-                $h->set('Content-Type', Plack::MIME->mime_type($uri));
+                $h->set('Content-Type', Plack::MIME->mime_type($env->{PATH_INFO}));
 
                 open my $fh, '<', $self->{$uri}
                     or die "Can't open file $self->{$uri}: $!";
