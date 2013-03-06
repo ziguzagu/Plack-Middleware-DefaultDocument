@@ -20,7 +20,7 @@ sub call {
         return if $r->[0] != 404;
 
         for my $uri (grep { $_ ne 'app' } keys %$self) {
-            if ($env->{PATH_INFO} eq $uri) {
+            if ($env->{PATH_INFO} =~ m{$uri}) {
                 ## return 404 if the specified file doesn't exist
                 return unless -f $self->{$uri};
 
@@ -50,8 +50,8 @@ Plack::Middleware::DefaultDocument - Return default document with '200' instead 
 =head1 SYNOPSIS
 
   enable "DefaultDocument",
-      '/favicon.ico' => '/path/to/htodcs/favicon.ico',
-      '/robots.txt'  => '/path/to/htdocs/robots.txt';
+      '/favicon\.ico$' => '/path/to/htodcs/favicon.ico',
+      '/robots\.txt'   => '/path/to/htdocs/robots.txt';
 
 =head1 DESCRIPTION
 
