@@ -49,9 +49,10 @@ Plack::Middleware::DefaultDocument - Return default document with '200' instead 
 
 =head1 SYNOPSIS
 
-  enable "DefaultDocument",
+  enable "DefaultDocument" => (
       '/favicon\.ico$' => '/path/to/htodcs/favicon.ico',
-      '/robots\.txt'   => '/path/to/htdocs/robots.txt';
+      '/robots\.txt'   => '/path/to/htdocs/robots.txt',
+  );
 
 =head1 DESCRIPTION
 
