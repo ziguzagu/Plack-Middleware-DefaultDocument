@@ -1,7 +1,7 @@
 language: perl
 before_install:
   - perlbrew -f install-cpanm
-  - cpanm inc::Module::Install Module::Install::AuthorTests Module::Install::ReadmeFromPod Module::Install::Repository Module::Install::Authority
+  - cpanm inc::Module::Install Module::Install::AuthorTests Module::Install::ReadmeFromPod Module::Install::Repository Module::Install::Authority Module::Install::CPANfile
 perl:
   - "5.10"
 
