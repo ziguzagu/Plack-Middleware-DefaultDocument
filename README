@@ -3,9 +3,10 @@ NAME
     instead of '404' error
 
 SYNOPSIS
-      enable "DefaultDocument",
+      enable "DefaultDocument" => (
           '/favicon\.ico$' => '/path/to/htodcs/favicon.ico',
-          '/robots\.txt'   => '/path/to/htdocs/robots.txt';
+          '/robots\.txt'   => '/path/to/htdocs/robots.txt',
+      );
 
 DESCRIPTION
     This DefaultDocument middleware is able to return '200' response with
